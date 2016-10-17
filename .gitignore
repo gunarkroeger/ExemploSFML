@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+
+# Folders
+doc
+SFML-2.3.2/doc/
+SFML-2.3.2/examples/
+SFML-2.3.2/cmake/
