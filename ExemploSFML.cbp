@@ -76,7 +76,31 @@
 			<Add library="sfml-main-d" />
 			<Add library="sfml-network-d" />
 		</Linker>
+		<Unit filename="include/Cenario.h" />
+		<Unit filename="include/Entidade.h" />
+		<Unit filename="include/GerenciadorGrafico.h" />
+		<Unit filename="include/Inimigo.h" />
+		<Unit filename="include/Jogador.h" />
+		<Unit filename="include/Jogo.h" />
+		<Unit filename="include/Mapa1.h" />
+		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Peixe.h" />
+		<Unit filename="include/Personagem.h" />
+		<Unit filename="include/Principal.h" />
+		<Unit filename="include/Tanque.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Cenario.cpp" />
+		<Unit filename="src/Entidade.cpp" />
+		<Unit filename="src/GerenciadorGrafico.cpp" />
+		<Unit filename="src/Inimigo.cpp" />
+		<Unit filename="src/Jogador.cpp" />
+		<Unit filename="src/Jogo.cpp" />
+		<Unit filename="src/Mapa1.cpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Peixe.cpp" />
+		<Unit filename="src/Personagem.cpp" />
+		<Unit filename="src/Principal.cpp" />
+		<Unit filename="src/Tanque.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,49 +1,54 @@
 #include <iostream>
-#include <SFML/Graphics.hpp>
+#include "Principal.h"
 
-// This is the main C++ program- Duh!
-// It is where our game starts from
+using namespace sf;
+using namespace std;
+
 int main()
 {
-    sf::ContextSettings settings;
+    Principal ObjPrincipal;
+
+	return 0;
+/*
+    ContextSettings settings;
     settings.antialiasingLevel = 8;
-    //sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "ExemploSFML", sf::Style::Fullscreen, settings);
-    sf::RenderWindow window(sf::VideoMode(800,800), "ExemploSFML", sf::Style::Default, settings);
+    //RenderWindow window(VideoMode::getFullscreenModes()[0], "ExemploSFML", Style::Fullscreen, settings);
+    RenderWindow window(VideoMode(800,800), "ExemploSFML", Style::Default, settings);
     window.setKeyRepeatEnabled(false);
 
-    sf::Font font;
+    Font font;
     font.loadFromFile("Carlito-Bold.ttf");
 
 
-    sf::Texture background;
+    Texture background;
     background.loadFromFile("background.png");
     background.setSmooth(true);
 
-    sf::Clock clock;
-    sf::Time time;
+    Clock clock;
+    Time time;
 
     // This "while" loop goes round and round- perhaps forever
     while (window.isOpen())
     {
-        time = sf::seconds(0);
+        time = seconds(0);
         // The next 6 lines of code detect if the window is closed
         // And then shuts down the program
-        sf::Event event;
+        Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed)
                 // Someone closed the window- bye
                 window.close();
         }
 
         time = clock.getElapsedTime();
-        if(time > sf::seconds(1.0f/60))
+        if(time > seconds(1.0f/60))
         {
             clock.restart();
 
             window.setView(window.getDefaultView());
 
-            sf::Sprite sprite;
+            Sprite sprite;
             sprite.setTexture(background);
             sprite.setOrigin(100,100);
             window.draw(sprite);
@@ -52,5 +57,5 @@ int main()
         }
     }
 
-    return 0;
+    return 0;*/
 }
