@@ -7,7 +7,7 @@ Principal::Principal()
 
 Principal::~Principal()
 {
-    //dtor
+
 }
 
 void Principal::Executar()
@@ -15,8 +15,6 @@ void Principal::Executar()
     J = new Jogo(&grafico);
 
     ContextSettings settings;
-    settings.antialiasingLevel = 8;
-    //RenderWindow window(VideoMode::getFullscreenModes()[0], "ExemploSFML", Style::Fullscreen, settings);
     RenderWindow window(VideoMode(800,600), "ExemploSFML", Style::Default, settings);
     window.setKeyRepeatEnabled(false);
 
@@ -50,20 +48,14 @@ void Principal::Executar()
         {
             clock.restart();
 
-            window.setView(window.getDefaultView());
-
-            Sprite sprite;
-            sprite.setTexture(background);
-            sprite.setOrigin(100,100);
-            window.draw(sprite);
             Movimento();
             Desenha(window);
 
             window.display();
         }
     }
+
     delete J;
-    // cria o jogo e envia o personagem como parâmetro (por referência)
 }
 
 void Principal::Desenha(RenderWindow &window)

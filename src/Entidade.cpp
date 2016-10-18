@@ -4,7 +4,6 @@ Entidade::Entidade()
 {
    x = 0;
    y = 0;
-   grafico = NULL;
 }
 
 Entidade::~Entidade()
@@ -12,19 +11,24 @@ Entidade::~Entidade()
 
 }
 
-void Entidade::setX(int x)
+void Entidade::setX(float x)
 {
     this->x = x;
 }
 
-void Entidade::setY(int y)
+void Entidade::setY(float y)
 {
     this->y = y;
 }
 
-void Entidade::setGrafico(GerenciadorGrafico* grafico)
+void Entidade::setH( const int H )
 {
-    this->grafico = grafico;
+    h = H;
+}
+
+void Entidade::setL( const int L )
+{
+    l = L;
 }
 
 void Entidade::setTexture(Texture &texture)
@@ -32,19 +36,34 @@ void Entidade::setTexture(Texture &texture)
     this->imagem.setTexture(texture);
 }
 
-int Entidade::getX()
+float Entidade::getX()
 {
     return x;
 }
 
-int Entidade::getY()
+float Entidade::getY()
 {
     return y;
 }
 
-GerenciadorGrafico* Entidade::getGrafico()
+const int Entidade::getH()
 {
-    return grafico;
+    return h;
+}
+
+const int Entidade::getL()
+{
+    return l;
+}
+
+bool Entidade::getColide()
+{
+    return colide;
+}
+
+int Entidade::getMassa()
+{
+    return massa;
 }
 
 Sprite Entidade::getImagem()
@@ -61,4 +80,52 @@ void Entidade::Desenha(RenderWindow &window)
 void Entidade::Movimento()
 {
 
+}
+
+bool Entidade::Colide(Entidade* outra)
+{
+    if(!this->colide || !outra->getColide())
+        return false;
+
+    if(x > outra->getX() + outra->getL())
+        return false;
+    if(x + getL() < outra->getX())
+        return false;
+
+    if(y > outra->getY() + outra->getH())
+        return false;
+    if(y + getH() < outra->getY())
+        return false;
+
+    int dx = (x + l)/2 - (outra->getX() + outra->getL())/2;
+    int dy = (y + h)/2 - (outra->getY() + outra->getH())/2;
+
+    if(massa < outra->getMassa())
+    {
+        if(abs(dx) > abs(dy)) //força da colisão só nas direções x OU y
+            x += 0.05*dx;
+        else
+            y += 0.05*dy;
+    }
+    else if(massa > outra->getMassa())
+    {
+        if(abs(dx) > abs(dy))
+            outra->setX(outra->getX() - 0.05*dx);
+        else
+            outra->setY(outra->getY() - 0.05*dy);
+    }
+    else
+    {
+        if(abs(dx) > abs(dy))
+        {
+            x += 0.04*dx;
+            outra->setX(outra->getX() - 0.04*dx);
+        }
+        else
+        {
+            y += 0.04*dy;
+            outra->setY(outra->getY() - 0.04*dy);
+        }
+    }
+    return true;
 }

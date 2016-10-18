@@ -1,6 +1,6 @@
 #include "Tanque.h"
 
-Tanque::Tanque() : Inimigo()
+Tanque::Tanque()
 {
     x = 700;
     y = 250;
@@ -19,14 +19,12 @@ void Tanque::Movimento()
     if(y <= 100)
     {
         vy = -vy;
-        Sx = 31;
-        direcao = 1;
+        spriteNum = 1;
     }
     if(y >= 470)
     {
         vy = -vy;
-        Sx = 0;
-        direcao = 0;
+        spriteNum = 0;
     }
     y = y + vy;
 }

@@ -2,78 +2,64 @@
 
 Peixe::Peixe() : Inimigo()
 {
- 
+    spriteNum = rand() % 12;
+    massa = 100;
+    colide = false;
+    x = rand() % 450 + 100;
+    y = rand() % 400 + 100;
+    LA = 4;
+    A = rand() % 5;
 }
 
 Peixe::~Peixe()
 {
-               
+
 }
 
+void Peixe::setTexture(Texture& texture)
+{
+    Entidade::setTexture(texture);
+    this->imagem.setTextureRect(IntRect(6,3,64,176));
+    int w = 33;
+    int h = 31;
+
+    for(int j = 0; j < 4; j++)
+        for(int i = 0; i < 3; i++)
+            sprites.push_back(IntRect(1+w*i,1+h*j,w,h));
+}
 
 /* Sets */
-    void Peixe::setA(int a)
-    {
-        A = a;
-    }
-    
-    void Peixe::setLA(int la)
-    {
-        LA = la;         
-    }
+void Peixe::setA(int a)
+{
+    A = a;
+}
 
-/* Gets */ 
-    int Peixe::getA()
-    {
-        return A;         
-    }
-    
-    int Peixe::getLA()
-    {
-        return LA;         
-    }
+void Peixe::setLA(int la)
+{
+    LA = la;
+}
 
+/* Gets */
+int Peixe::getA()
+{
+    return A;
+}
 
-/* Movimentação */
-    int Peixe::Animacao() // Método para gerenciar a animação do peixe.
+int Peixe::getLA()
+{
+    return LA;
+}
+
+void Peixe::Movimento()
+{
+    A--;
+    if(A <= 0)
     {
-      A++;     // Incrementa a variável de animação.
-      
-      if (A > 4*LA) A = 0;    // Se a variável de animação for maior que 4x 
-                              // o valor da variável da velocidade da animação
-                              // a variável A volta para 0.
-      
-      if (A <= LA) return 0;  // Se a variável da animação for menor que a de controle de velocidade, retora 0.
-      else if (((A > LA)&&(A <= 2*LA))||(A > 3*LA)) return 1; // Se estiver entre 2*LA e 3*LA ou se for maior que 3*LA, retorna 1.
-      else if ((A > 2*LA)&&(A <= 3*LA)) return 2; // Se estiver entre 2*LA e 3*LA, retorna 2.
-      else return 2;   // Retorno padrão = 2.
-      
-      // Cada retorno se refere a uma imagem da animação, no caso, a
-      // animação do peixe tem apenas 3 imagens, portanto 3 retornos (0,1 e 2)
-      
+        A = LA;
+        spriteNum = (spriteNum+1) % sprites.size();
     }
-      
-    void Peixe::Movimento()    
-    {
-        if (Animacao() == 0) //28,28
-        {
-            Sx = 3;     // Modifica a coordenada X da imagem onde o jogo vai pegar o sprite do personagem,
-                        // modificando a imagem de acordo com o estágio da animação.
-        }  
-        else if (Animacao() == 1) //28,28
-        {
-            Sx = 35; 
-        }
-        else if (Animacao() == 2)
-        {
-            Sx = 66; 
-        }
-        else
-        {
-            Sx = 66; 
-        }
-    }
- 
+}
+
 
 
 

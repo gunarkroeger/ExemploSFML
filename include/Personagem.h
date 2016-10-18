@@ -6,45 +6,29 @@
 
 class Personagem : public Entidade
 {
-    protected:          // Protected para que as classes derivadas possuam esses atributos.
-        GerenciadorGrafico* grafico;
-           Sprite img; // Imagem.
-           short int h;       // Altura da imagem.
-           short int l;       // Largura da imagem.
-           short int vx;      // Velocidade em Y.
-           short int vy;      // Velocidade em X.
-           short int Sx;      // Posição x do sprite na imagem maior.
-           short int Sy;      // Posição y do sprite na imagem maior.
-           short int direcao; // Indica se o personagem está orientado na vertical ou na horizontal.
+protected:          // Protected para que as classes derivadas possuam esses atributos.
+    short int vx;      // Velocidade em Y.
+    short int vy;      // Velocidade em X.
+    short int spriteNum; // Numero da sprite
 
-           bool C,B,D,E; // Variáveis para detectar o sentido das colisões.
-           vector<IntRect> sprites;
+    vector<IntRect> sprites;
 
-    public:
-           Personagem();
-           ~Personagem();
+public:
+    Personagem();
+    ~Personagem();
 
-           /* Sets */
-           void setH( const short int H );
-           void setL( const short int L );
-           void setvx( const short int VX );
-           void setvy( const short int VY );
-           void setsx( const short int SX );
-           void setsy( const short int SY );
-           void setbuffer( Texture B);
+    /* Sets */
+    void setVx( const short int VX );
+    void setVy( const short int VY );
 
-           /* Gets */
-           const short int getH();
-           const short int getL();
-           const short int getvx();
-           const short int getvy();
-           const short int getsx();
-           const short int getsy();
+    /* Gets */
+    const short int getvx();
+    const short int getvy();
 
-           /* Movimentação */
-           virtual void Movimento();
+    /* Movimentação */
+    virtual void Movimento();
 
-           virtual void Desenha(RenderWindow &window);
+    virtual void Desenha(RenderWindow &window);
 };
 
 #endif

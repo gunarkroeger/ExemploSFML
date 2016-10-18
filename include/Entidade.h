@@ -3,31 +3,42 @@
 
 #include "GerenciadorGrafico.h"
 
-enum Direcao{L,R,U,D};
-
 class Entidade
 {
     public:
         Entidade();
         virtual ~Entidade();
 
-        void setX(int x);
-        void setY(int y);
-        void setGrafico(GerenciadorGrafico* grafico);
+        void setX(float x);
+        void setY(float y);
+        void setH( const int H );
+        void setL( const int L );
+
         virtual void setTexture(Texture &texture);
 
-        int getX();
-        int getY();
-        GerenciadorGrafico* getGrafico();
+        float getX();
+        float getY();
+        const int getH();
+        const int getL();
+
         Sprite getImagem();
+
+        bool getColide();
+        int getMassa();
 
         virtual void Desenha(RenderWindow &window);
         virtual void Movimento();
+        bool Colide(Entidade* outra); //colisão de retangulos
+
     protected:
-        int x;
-        int y;
-        GerenciadorGrafico* grafico;
+        float x;
+        float y;
+        int h;       // Altura da imagem.
+        int l;       // Largura da imagem.
+
         Sprite imagem;
+        bool colide;
+        int massa; //entidade de menor massa será empurrada em caso de colisão
 
     private:
 };

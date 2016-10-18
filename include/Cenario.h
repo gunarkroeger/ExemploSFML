@@ -8,19 +8,14 @@
 class Cenario : public Entidade
 {
     protected:
-            short int x;
-            short int y;      // Posições e velocidade.
-            short int v;
-            short int redutor_velocidade;
+            float v;
             // Variável que faz com que a imagem se mova menos de um pixel
             // por loop.
     public:
             Cenario();
             ~Cenario();
-            void setv( const short int V );
-            void setRV( const short int RV );
+            void setV(const float v);
 
-            void Desenha();
             /* Movimentação */
             void Movimento();
 

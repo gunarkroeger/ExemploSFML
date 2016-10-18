@@ -5,17 +5,15 @@
 
 class Inimigo : public Personagem
 {
-    private:
-            
-    public:
-            Inimigo();
-            ~Inimigo();
-            
-            /* Movimentação */
-            virtual void Movimento();
-            void Desenha();
-            /* Colisão */
-           
+private:
+
+public:
+    Inimigo();
+    ~Inimigo();
+
+    /* Movimentação */
+    virtual void Movimento();
+    virtual void Desenha();
 };
 
 #endif
