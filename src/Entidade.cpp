@@ -2,7 +2,8 @@
 
 Entidade::Entidade()
 {
-    //ctor
+   x = 0;
+   y = 0;
 }
 
 Entidade::~Entidade()
@@ -54,4 +55,9 @@ void Entidade::Desenha(RenderWindow &window)
 {
     imagem.setPosition(x,y);
     window.draw(imagem);
+}
+
+void Entidade::Movimento()
+{
+
 }

@@ -84,3 +84,8 @@ void Personagem::Desenha()
     grafico->Desenha(img);
     //masked_stretch_blit(img, buffer, Sx, Sy, l*2, h*2, x, y, l, h); // (Imagem, Buffer, Xinicial na IMG maior. Yinicial na IMG maior, Largura do subsprite, Altura do Subsprite, posiçãoX, posiçãoY, TamanhoX, TamanhoY);
 }
+
+void Personagem::Movimento()
+{
+
+}

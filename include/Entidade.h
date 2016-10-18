@@ -12,13 +12,15 @@ class Entidade
         void setX(int x);
         void setY(int y);
         void setGrafico(GerenciadorGrafico* grafico);
-        void setTexture(Texture &texture);
+        virtual void setTexture(Texture &texture);
 
         int getX();
         int getY();
         GerenciadorGrafico* getGrafico();
         Sprite getImagem();
+
         void Desenha(RenderWindow &window);
+        virtual void Movimento();
     protected:
         int x;
         int y;

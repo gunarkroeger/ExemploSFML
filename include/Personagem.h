@@ -41,13 +41,9 @@ class Personagem : public Entidade
            const short int getsy();
 
            /* Movimentação */
-           virtual void Movimento() = 0;
-           // virtual para que o método possa ser redefinido nas subclasses
-           // = 0 para tornar a classe 'abstrata', já que não será criado
-           // nenhum objeto Personagem.
+           virtual void Movimento();
 
            virtual void Desenha();
-
 };
 
 #endif

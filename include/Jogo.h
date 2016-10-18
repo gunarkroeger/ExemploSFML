@@ -12,6 +12,10 @@ class Jogo
            Menu* M;
            Jogador* P1;  // Jogador 1;
            Jogador* P2;
+           Tanque* T1;
+           Cenario* mar;
+           Cenario* barreira;
+           Cenario* praia;
            Mapa1 *M1;   //   Mapa 1;
            GerenciadorGrafico* grafico;
 
@@ -28,6 +32,7 @@ class Jogo
            void setJogadores(Jogador* P, Jogador* PP);
            void setMenu( Menu* ME);
            void Desenha(RenderWindow &window);
+           void Movimento();
 
            vector<Entidade*> listaEntidades;
 };

@@ -12,6 +12,7 @@ Jogo::~Jogo()
     listaEntidades.clear();
     delete P1;
     delete P2;
+    delete T1;
 }
 
 void Jogo::Inicializar(GerenciadorGrafico* grafico)
@@ -23,12 +24,27 @@ void Jogo::Inicializar(GerenciadorGrafico* grafico)
 
 void Jogo::Iniciar()
 {
-    P1 = new Jogador();
-    P2 = new Jogador();
+    mar = new Cenario();
+    barreira = new Cenario();
+    praia = new Cenario();
+    praia->setX(0);
+    P1 = new Jogador(1);
+    P2 = new Jogador(2);
+    T1 = new Tanque();
+
+    mar->setTexture(grafico->tMar);
+    barreira->setTexture(grafico->tBarreira);
+    praia->setTexture(grafico->tPraia);
     P1->setTexture(grafico->tP1);
-    P2->setTexture(grafico->tP1);
+    P2->setTexture(grafico->tP2);
+    T1->setTexture(grafico->tTanque);
+
+    listaEntidades.push_back(mar);
+    listaEntidades.push_back(praia);
+    listaEntidades.push_back(barreira);
     listaEntidades.push_back(P1);
     listaEntidades.push_back(P2);
+    listaEntidades.push_back(T1);
 
     //M1->setJogadores(P1, P2); // Associa os jogadores ao Mapa.
     //M1->setMenu(M);           // Associa o Menu ao mapa.
@@ -60,5 +76,13 @@ void Jogo::Desenha(RenderWindow &window)
     for(unsigned i = 0; i < listaEntidades.size(); i++)
     {
         listaEntidades[i]->Desenha(window);
+    }
+}
+
+void Jogo::Movimento()
+{
+    for(unsigned i = 0; i < listaEntidades.size(); i++)
+    {
+        listaEntidades[i]->Movimento();
     }
 }

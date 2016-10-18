@@ -17,7 +17,7 @@ void Principal::Executar()
     ContextSettings settings;
     settings.antialiasingLevel = 8;
     //RenderWindow window(VideoMode::getFullscreenModes()[0], "ExemploSFML", Style::Fullscreen, settings);
-    RenderWindow window(VideoMode(800,800), "ExemploSFML", Style::Default, settings);
+    RenderWindow window(VideoMode(800,600), "ExemploSFML", Style::Default, settings);
     window.setKeyRepeatEnabled(false);
 
     Font font;
@@ -56,6 +56,7 @@ void Principal::Executar()
             sprite.setTexture(background);
             sprite.setOrigin(100,100);
             window.draw(sprite);
+            Movimento();
             Desenha(window);
 
             window.display();
@@ -68,4 +69,9 @@ void Principal::Executar()
 void Principal::Desenha(RenderWindow &window)
 {
     J->Desenha(window);
+}
+
+void Principal::Movimento()
+{
+    J->Movimento();
 }

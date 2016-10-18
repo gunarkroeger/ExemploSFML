@@ -17,6 +17,12 @@ class GerenciadorGrafico
 
 
             Texture tP1;
+            Texture tP2;
+            Texture tMar;
+            Texture tPraia;
+            Texture tTanque;
+            Texture tPeixe;
+            Texture tBarreira;
 };
 
 #endif

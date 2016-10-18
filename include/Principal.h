@@ -12,6 +12,7 @@ class Principal
 
         void Executar();
         void Desenha(RenderWindow &window);
+        void Movimento();
 
     protected:
 

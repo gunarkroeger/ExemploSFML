@@ -6,16 +6,16 @@
 class Tanque : public Inimigo
 {
     private:
-            
+
     public:
             Tanque();
             ~Tanque();
-            
+
             /* Movimentação */
             void Movimento();
-            
+            void setTexture(Texture &texture);
             /* Colisão */
-           
+
 };
 
 #endif
