@@ -135,10 +135,7 @@ void Mapa1::Tela1()
 
     while (1) //loop principal.
     {
-        Mar.Desenha();   // Chama a função Desenha para desenhar o mar no buffer.
-        Terra.Desenha();   // Chama a função Desenha para desenhar a terra no buffer.
-        P1->Desenha();   // Chama a função Desenha para desenhar o personagem no buffer.
-        P2->Desenha();
+
 
         //P1->testecolisao(P2,91,1000,92,502); // Testa a colisão do Jogador 1 com a tela e com o jogador 2.
         //P2->testecolisao(P1,91,1000,92,502); // Testa a colisão do Jogador 2 com a tela e com o jogador 1.
@@ -177,11 +174,7 @@ void Mapa1::Tela2()
 
     while (1) //loop principal.
     {
-        Mar.Desenha();   // Chama a função Desenha para desenhar o mar no buffer.
-        Terra.Desenha(); // Chama a função Desenha para desenhar a terra no buffer.
-        P1->Desenha();   // Chama a função Desenha para desenhar o personagem no buffer.
-        P2->Desenha();
-        T1.Desenha();    // Desenha Tanque.
+
 
         P1->testecolisao(P2,-200,600,-200,600); // Testa a colisão do Jogador 1 com a tela e com o jogador 2.
         P2->testecolisao(P1,-200,600,-200,600); // Testa a colisão do Jogador 2 com a tela e com o jogador 1.
@@ -230,13 +223,7 @@ void Mapa1::Tela3()
 
     while (1) //loop principal.
     {
-        Mar.Desenha();   // Chama a função Desenha para desenhar o mar no buffer.
-        Terra.Desenha(); // Chama a função Desenha para desenhar a terra no buffer.
-        Px1.Desenha();   // Desenha Peixe.
-        Px2.Desenha();
-        Px3.Desenha();
-        P1->Desenha();   // Chama a função Desenha para desenhar o personagem no buffer.
-        P2->Desenha();
+
 
         P1->testecolisao(P2,0,600,0,900); // Testa a colisão do Jogador 1 com a tela e com o jogador 2.
         P2->testecolisao(P1,0,600,0,900); // Testa a colisão do Jogador 2 com a tela e com o jogador 1.

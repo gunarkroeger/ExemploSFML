@@ -79,9 +79,11 @@ const short int Personagem::getsy()
     return Sy;
 }
 
-void Personagem::Desenha()
+void Personagem::Desenha(RenderWindow &window)
 {
-    grafico->Desenha(img);
+    if(direcao <= sprites.size())
+        this->imagem.setTextureRect(sprites[direcao]);
+    Entidade::Desenha(window);
     //masked_stretch_blit(img, buffer, Sx, Sy, l*2, h*2, x, y, l, h); // (Imagem, Buffer, Xinicial na IMG maior. Yinicial na IMG maior, Largura do subsprite, Altura do Subsprite, posiçãoX, posiçãoY, TamanhoX, TamanhoY);
 }
 

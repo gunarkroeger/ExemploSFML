@@ -19,6 +19,8 @@ void GerenciadorGrafico::init()
     tTanque.loadFromFile("Arquivos//Imagens//Tanque1.png");
     tPeixe.loadFromFile("Arquivos//Imagens//Aquatico1.png");
     tBarreira.loadFromFile("Arquivos//Imagens//Barreira1.png");
+
+    //rP.push_back(IntRect(6,3,64,176));
 }
 
 void GerenciadorGrafico::deinit()

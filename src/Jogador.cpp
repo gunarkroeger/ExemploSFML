@@ -4,12 +4,14 @@ Jogador::Jogador(): num(1), Personagem()
 {
     vx = 2;
     vy = 2;
+    direcao = 3;
 }
 
 Jogador::Jogador(const short int N) : num(N), Personagem()
 {
     vx = 2;
     vy = 2;
+    direcao = 3;
 }
 
 Jogador::~Jogador()
@@ -21,6 +23,11 @@ void Jogador::setTexture(Texture &texture)
 {
     Entidade::setTexture(texture);
     this->imagem.setTextureRect(IntRect(6,3,64,176));
+
+    sprites.push_back(IntRect(6,3,64,176));
+    sprites.push_back(IntRect(88,3,64,176));
+    sprites.push_back(IntRect(174,3,176,64));
+    sprites.push_back(IntRect(174,80,176,64));
 }
 
 /* Gets */
@@ -34,26 +41,42 @@ void Jogador::Movimento()
 {
     if(num == 1)
     {
-        if(Keyboard::isKeyPressed(sf::Keyboard::Left))
+        if(Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             x -= vx;
-        if(Keyboard::isKeyPressed(sf::Keyboard::Right))
+            direcao = 2;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             x += vx;
-        if(Keyboard::isKeyPressed(sf::Keyboard::Up))
+            direcao = 3;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             y -= vy;
-        if(Keyboard::isKeyPressed(sf::Keyboard::Down))
+            direcao = 1;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             y += vy;
+            direcao = 0;
+        }
     }
 
     if(num == 2)
     {
-        if(Keyboard::isKeyPressed(sf::Keyboard::A))
+        if(Keyboard::isKeyPressed(sf::Keyboard::A)) {
             x -= vx;
-        if(Keyboard::isKeyPressed(sf::Keyboard::D))
+            direcao = 2;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::D)) {
             x += vx;
-        if(Keyboard::isKeyPressed(sf::Keyboard::W))
+            direcao = 3;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::W)) {
             y -= vy;
-        if(Keyboard::isKeyPressed(sf::Keyboard::S))
+            direcao = 1;
+        }
+        else if(Keyboard::isKeyPressed(sf::Keyboard::S)) {
             y += vy;
+            direcao = 0;
+        }
     }
 
 

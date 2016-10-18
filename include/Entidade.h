@@ -3,6 +3,8 @@
 
 #include "GerenciadorGrafico.h"
 
+enum Direcao{L,R,U,D};
+
 class Entidade
 {
     public:
@@ -19,7 +21,7 @@ class Entidade
         GerenciadorGrafico* getGrafico();
         Sprite getImagem();
 
-        void Desenha(RenderWindow &window);
+        virtual void Desenha(RenderWindow &window);
         virtual void Movimento();
     protected:
         int x;

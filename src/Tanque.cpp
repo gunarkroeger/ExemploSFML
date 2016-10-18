@@ -20,11 +20,13 @@ void Tanque::Movimento()
     {
         vy = -vy;
         Sx = 31;
+        direcao = 1;
     }
     if(y >= 470)
     {
         vy = -vy;
         Sx = 0;
+        direcao = 0;
     }
     y = y + vy;
 }
@@ -32,5 +34,6 @@ void Tanque::Movimento()
 void Tanque::setTexture(Texture &texture)
 {
     Entidade::setTexture(texture);
-    this->imagem.setTextureRect(IntRect(0,0,32,32));
+    sprites.push_back(IntRect(0,0,32,32));
+    sprites.push_back(IntRect(32,0,32,32));
 }

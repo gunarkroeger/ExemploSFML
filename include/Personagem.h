@@ -18,6 +18,7 @@ class Personagem : public Entidade
            short int direcao; // Indica se o personagem está orientado na vertical ou na horizontal.
 
            bool C,B,D,E; // Variáveis para detectar o sentido das colisões.
+           vector<IntRect> sprites;
 
     public:
            Personagem();
@@ -43,7 +44,7 @@ class Personagem : public Entidade
            /* Movimentação */
            virtual void Movimento();
 
-           virtual void Desenha();
+           virtual void Desenha(RenderWindow &window);
 };
 
 #endif

@@ -5077,12 +5077,13 @@
 1476804996 c:\users\gunar\dropbox\monitoria\exemplosfml\include\jogador.h
 	"Personagem.h"
 
-1476805882 c:\users\gunar\dropbox\monitoria\exemplosfml\include\personagem.h
+1476812171 c:\users\gunar\dropbox\monitoria\exemplosfml\include\personagem.h
 	"GerenciadorGrafico.h"
 	"Entidade.h"
 
-1476808702 c:\users\gunar\dropbox\monitoria\exemplosfml\include\gerenciadorgrafico.h
+1476812171 c:\users\gunar\dropbox\monitoria\exemplosfml\include\gerenciadorgrafico.h
 	<SFML/Graphics.hpp>
+	<vector>
 
 1476806561 c:\users\gunar\dropbox\monitoria\exemplosfml\include\cenario.h
 	<SFML/Graphics.hpp>
@@ -5101,25 +5102,25 @@
 1476755365 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\cenario.cpp
 	"Cenario.h"
 
-1476808702 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\gerenciadorgrafico.cpp
+1476812171 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\gerenciadorgrafico.cpp
 	"GerenciadorGrafico.h"
 
 1476753867 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\inimigo.cpp
 	"Inimigo.h"
 
-1476808989 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\jogador.cpp
+1476812802 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\jogador.cpp
 	"Jogador.h"
 
 1476808681 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\jogo.cpp
 	"Jogo.h"
 
-1476805882 c:\users\gunar\dropbox\monitoria\exemplosfml\include\entidade.h
+1476812171 c:\users\gunar\dropbox\monitoria\exemplosfml\include\entidade.h
 	"GerenciadorGrafico.h"
 
-1476806674 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\entidade.cpp
+1476812171 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\entidade.cpp
 	"Entidade.h"
 
-1476759591 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\mapa1.cpp
+1476812213 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\mapa1.cpp
 	"Mapa1.h"
 	"Menu.h"
 
@@ -5129,12 +5130,12 @@
 1360175850 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\peixe.cpp
 	"Peixe.h"
 
-1476805882 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\personagem.cpp
+1476812226 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\personagem.cpp
 	"Personagem.h"
 
-1476808182 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\principal.cpp
+1476812429 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\principal.cpp
 	"Principal.h"
 
-1476808182 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\tanque.cpp
+1476812274 source:c:\users\gunar\dropbox\monitoria\exemplosfml\src\tanque.cpp
 	"Tanque.h"
 
